@@ -25,7 +25,7 @@ router.get('/', auth, async (req, res) => {
 // @desc    Auth user and get token
 // @access  Public
 router.post('/', [
-        check('email', 'Please enter a valid email.').isEmail(),
+        check('email', 'Please enter a valid email').isEmail(),
         check('password', 'Please enter a password').exists()
     ],
     async (req, res) => {
@@ -46,7 +46,7 @@ router.post('/', [
             const isMatch = await bcrypt.compare(password, user.password);
 
             if(!isMatch) {
-                return res.status(400).json({ msg: 'invalid credentials' })
+                return res.status(400).json({ msg: 'Invalid credentials' })
             }
             
             const payload = {
