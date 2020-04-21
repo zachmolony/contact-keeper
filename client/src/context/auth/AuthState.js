@@ -2,7 +2,6 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
-import SetAuthToken from '../../utils/setAuthToken'
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
@@ -11,8 +10,7 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT,
-    CLEAR_ERRORS,
-    CLEAR_CONTACTS
+    CLEAR_ERRORS
   } from '../types';
 import setAuthToken from '../../utils/setAuthToken';
 
